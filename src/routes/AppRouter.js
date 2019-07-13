@@ -15,7 +15,7 @@ function AppRouter(){
                 <Switch>
                     <Route path="/" component={ExpenseDashboardPage} exact/>
                     <Route path="/create" component={AddExpensePage}/>
-                    <Route path="/edit" component={EditExpensePage}/>
+                    <Route path="/edit/:id" component={EditExpensePage}/>
                     <Route path="/help" component={HelpExpensePage}/>
                     <Route component={NotFoundPage}/>
                 </Switch>
