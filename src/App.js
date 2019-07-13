@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route} from 'react-router-dom'
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
 import './App.css';
 
 const ExpenseDashboardPage = ()=>(
@@ -22,16 +22,22 @@ const HelpExpensePage = ()=>(
         This is the Help Expense page.
     </div>
 );
+const NotFoundPage = ()=>(
+    <div>
+        404!
+    </div>
+);
 
 function App(){
     return(
         <BrowserRouter>
-            <div>
+            <Switch>
                 <Route path="/" component={ExpenseDashboardPage} exact/>
                 <Route path="/create" component={AddExpensePage}/>
                 <Route path="/edit" component={EditExpensePage}/>
                 <Route path="/help" component={HelpExpensePage}/>
-            </div>
+                <Route component={NotFoundPage}/>
+            </Switch>
         </BrowserRouter>
     );
 }
