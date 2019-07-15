@@ -30,6 +30,11 @@ const editExpense = (id, updates)=>({
     id: id,
     updates: updates
 });
+/*const editExpense = (id, amount)=>({
+    type: 'EDIT_EXPENSE',
+    id: id,
+    amount: amount
+});*/
 //Set_text_filter
 const setTextFilter = (text='')=>({
     type: 'SET_TEXT_FILTER',
@@ -65,7 +70,7 @@ const expenseReducer = (state = expenseReducerDefaultState, action)=>{
                 action.expense
             ];
         case 'REMOVE_EXPENSE':
-            return store.filter(({id})=>{
+            return state.filter(({id})=>{
                 return id !== action.id;
             });
         case 'EDIT_EXPENSE':
