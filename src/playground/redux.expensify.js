@@ -147,9 +147,10 @@ const getVisibleExpenses = (expenses,{text, sortBy, startDate, endDate})=>{
 const store = createStore(
     combineReducers({
         expenses: expenseReducer,
-        filter: filterReducer
+        filters: filterReducer
     })
 );
+
 
 //To track changes we have to use subscribe, it will execute every time changes of state
 store.subcribe(()=>{
