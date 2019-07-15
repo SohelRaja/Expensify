@@ -1,4 +1,4 @@
-import { createStore, combineedusers, combineReducers } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import uuid from 'uuid';
 /*Action*/
 //Add Expense
