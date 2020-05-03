@@ -1,24 +1,27 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Button} from 'reactstrap';
 import ExpenseForm from './ExpenseForm';
 import {startEditExpense, startRemoveExpense} from '../actions/expenses';
 
 const EditExpensePage = (props)=> {
     return (
-        <div>
+        <div className="container">
+            <h2>Edit Expense: "{props.expense.description}"</h2>
             <ExpenseForm
                 expense={props.expense}
                 onSubmit={(expense)=>{
                     props.dispatch(startEditExpense(props.expense.id, expense));
                     props.history.push('/');
                 }}            
-            />
-            <button 
+            /><br />
+            <Button 
+                color="danger" size="lg"
                 onClick={()=>{
                     props.dispatch(startRemoveExpense({id: props.expense.id}));
                     props.history.push('/');
                 }}
-            >Remove</button>
+            >Remove</Button>
         </div>
     );
 };

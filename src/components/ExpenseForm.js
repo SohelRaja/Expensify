@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import { Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 import {SingleDatePicker} from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
 import 'react-dates/initialize';
@@ -14,7 +15,8 @@ export default class ExpenseForm extends React.Component {
             amount: props.expense ? (props.expense.amount/100).toString() : '',
             createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
             calendarFocused: false,
-            error: ''
+            error: '',
+            buttonText: props.expense ? 'Update Expense' : 'Add Expense'
         };
     }
     onDescriptionChange = (e) => {
@@ -85,39 +87,52 @@ export default class ExpenseForm extends React.Component {
     render(){
         return(
             <div>
-                {this.state.error && <p>{this.state.error}</p>}
-                <form
+                {this.state.error && <Alert color="danger">{this.state.error}</Alert>}
+                <Form
                     onSubmit={this.onSubmit}
                 >
-                    <input 
-                        type="text"
-                        placeholder="Description"
-                        autoFocus
-                        value={this.state.description}
-                        onChange={this.onDescriptionChange}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Amount"
-                        value={this.state.amount}
-                        onChange={this.onAmountChange}
-                    />
-                    <SingleDatePicker
-                        date={this.state.createdAt}
-                        onDateChange={this.onDateChange}
-                        focused={this.state.calendarFocused}
-                        onFocusChange={this.onFocusChange}
-                        numberOfMonths={1}
-                        isOutsideRange={() => false}
-                    />
-                    <textarea
-                        placeholder="Add a note for your Expense"
-                        value={this.state.note}
-                        onChange={this.onNoteChange}
-                    >
-                    </textarea>
-                    <button>Add Expense</button>
-                </form>
+                    <FormGroup>
+                        <Label>Description</Label>
+                        <Input 
+                            type="text"
+                            placeholder="Your Description"
+                            autoFocus
+                            value={this.state.description}
+                            onChange={this.onDescriptionChange}
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Amount</Label>
+                        <Input
+                            type="text"
+                            placeholder="Your Amount"
+                            value={this.state.amount}
+                            onChange={this.onAmountChange}
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Date</Label><br />
+                        <SingleDatePicker
+                            date={this.state.createdAt}
+                            onDateChange={this.onDateChange}
+                            focused={this.state.calendarFocused}
+                            onFocusChange={this.onFocusChange}
+                            numberOfMonths={1}
+                            isOutsideRange={() => false}
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label>Note</Label>
+                        <Input
+                            type="textarea"
+                            rows="3"
+                            placeholder="Add a note for your Expense"
+                            value={this.state.note}
+                            onChange={this.onNoteChange}
+                        />
+                    </FormGroup>
+                    <Button color="primary" size="lg">{this.state.buttonText}</Button>
+                </Form>
             </div>
         )
     }
