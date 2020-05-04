@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import './App.css';
 import AppRouter from './routes/AppRouter.js';
 import store from './store/configureStore';
-import './firabase/firebase';
 
 
 function App(){

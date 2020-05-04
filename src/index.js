@@ -6,13 +6,19 @@ import App from './App';
 import store from './store/configureStore';
 import { startSetExpenses } from './actions/expenses';
 import * as serviceWorker from './serviceWorker';
+import {firebase} from './firabase/firebase';
 
 ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
 store.dispatch(startSetExpenses()).then(() => {
     ReactDOM.render(<App />, document.getElementById('root'));
 });
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+firebase.auth().onAuthStateChanged((user) => {
+    if(user){
+        console.log('Log in');
+    }else{
+        console.log('Log out');
+    }
+});
+
 serviceWorker.unregister();

@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import {Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Button} from 'reactstrap';
+import {startLogout} from '../actions/auth';
 
-const Header = () => {
+export const Header = ({startLogout}) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     return (
@@ -43,7 +45,7 @@ const Header = () => {
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <Button outline onClick={toggle}> Login</Button>
+                            <Button outline onClick={startLogout}> Logout</Button>
                         </NavItem>
                     </Nav>
                 </Collapse>
@@ -53,4 +55,8 @@ const Header = () => {
     );
 };
 
-export default Header;
+const mapDispatchToProps = (dispatch) => ({
+    startLogout: () => dispatch(startLogout())
+});
+
+export default connect(undefined, mapDispatchToProps)(Header);
