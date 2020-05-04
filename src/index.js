@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './index.css';
 import App from './App';
 import store from './store/configureStore';
@@ -9,6 +10,7 @@ import * as serviceWorker from './serviceWorker';
 import {firebase} from './firabase/firebase';
 import {history} from './routes/AppRouter';
 import {login, logout} from './actions/auth';
+import LoadingPage from './components/LoadingPage';
 
 
 let hasRendered = false;
@@ -19,7 +21,7 @@ const renderRoot = () => {
     }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
+ReactDOM.render(<LoadingPage />, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
     if(user){

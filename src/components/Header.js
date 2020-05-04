@@ -13,7 +13,7 @@ export const Header = ({startLogout}) => {
             <div className="container">
                 <NavbarToggler onClick={toggle} className="mr-2"/>
                 <NavbarBrand className="mr-auto" href="/">
-                    Expensify&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;Expensify&nbsp;&nbsp;&nbsp;
                 </NavbarBrand>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav navbar>
@@ -31,14 +31,6 @@ export const Header = ({startLogout}) => {
                                 activeClassName="is-active" 
                                 className="nav-link">
                                 Create 
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink 
-                                to="/help" 
-                                activeClassName="is-active" 
-                                className="nav-link">
-                                Help 
                             </NavLink>
                         </NavItem>
                     </Nav>

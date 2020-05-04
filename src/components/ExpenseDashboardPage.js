@@ -2,8 +2,7 @@ import React from 'react';
 import ExpenseList from './ExpenseList';
 import ExpenseListFilters from './ExpenseListFilters';
 import ExpensesSummary from './ExpensesSummary';
-import { Jumbotron, Button, Modal, ModalHeader, ModalBody,
-    Form, FormGroup, Input, Label} from 'reactstrap';
+import { Jumbotron } from 'reactstrap';
 
 const ExpenseDashboardPage = ()=>(
     <div>

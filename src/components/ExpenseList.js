@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Table} from 'reactstrap';
 
 import ExpenseListItem from './ExpenseListItem';
 import visibleExpenses from '../selectors/expenses';
