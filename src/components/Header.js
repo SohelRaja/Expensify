@@ -13,7 +13,7 @@ export const Header = ({startLogout}) => {
             <div className="container">
                 <NavbarToggler onClick={toggle} className="mr-2"/>
                 <NavbarBrand className="mr-auto" href="/">
-                    Expensify
+                    Expensify&nbsp;&nbsp;&nbsp;
                 </NavbarBrand>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav navbar>

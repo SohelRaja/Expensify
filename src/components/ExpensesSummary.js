@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import numeral from 'numeral';
+import {Button} from 'reactstrap';
+import {Link} from 'react-router-dom';
+
 import selectExpenses from '../selectors/expenses';
 import selectExpensesTotal from '../selectors/expenses-total';
 
@@ -11,6 +14,7 @@ export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
   return (
     <div>
       <h3>Viewing {expenseCount} {expenseWord} totalling {formattedExpensesTotal}</h3>
+      <Link to="/create"><Button color="primary" size="lg">Add Expense</Button></Link>
     </div>
   );
 };
