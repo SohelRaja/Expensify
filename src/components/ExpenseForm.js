@@ -16,7 +16,8 @@ export default class ExpenseForm extends React.Component {
             createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
             calendarFocused: false,
             error: '',
-            buttonText: props.expense ? 'Update Expense' : 'Add Expense'
+            buttonText: props.expense ? 'Update Expense' : 'Add Expense',
+            buttonIcon: props.expense ? 'fa fa-pencil' : 'fa fa-plus'
         };
     }
     onDescriptionChange = (e) => {
@@ -131,7 +132,7 @@ export default class ExpenseForm extends React.Component {
                             onChange={this.onNoteChange}
                         />
                     </FormGroup>
-                    <Button color="primary" size="lg">{this.state.buttonText}</Button>
+                    <Button color="primary" size="lg"><i className={this.state.buttonIcon} aria-hidden="true"></i> {this.state.buttonText}</Button>
                 </Form>
             </div>
         )

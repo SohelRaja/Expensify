@@ -14,7 +14,11 @@ export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
   return (
     <div>
       <h3>Viewing {expenseCount} {expenseWord} totalling {formattedExpensesTotal}</h3>
-      <Link to="/create"><Button color="primary" size="lg">Add Expense</Button></Link>
+      <Link to="/create">
+        <Button color="primary" size="lg">
+          <i className="fa fa-plus" aria-hidden="true"></i> Add Expense
+        </Button>
+      </Link>
     </div>
   );
 };

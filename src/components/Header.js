@@ -36,7 +36,7 @@ export const Header = ({startLogout}) => {
                     </Nav>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <Button outline onClick={startLogout}> Logout</Button>
+                            <Button outline onClick={startLogout}><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</Button>
                         </NavItem>
                     </Nav>
                 </Collapse>

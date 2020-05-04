@@ -9,7 +9,10 @@ export const LoginPage = ({startLogin}) => (
         <div className="box-layout-box">
             <h1 className="box-layout-title">Expensify</h1>
             <p>It's time to get your expenses under control.</p>
-            <Button onClick={startLogin} color="primary" size="lg">Login with Google</Button>
+            <Button onClick={startLogin} size="lg" color="primary">
+                <span className="btn btn-social-icon btn-google"><i className="fa fa-google"></i></span> 
+                &nbsp;&nbsp;Login with Google
+            </Button>
         </div>
     </div>
 );

@@ -18,7 +18,7 @@ const ExpenseListFilters = ((props) => {
                             }
                         }/>
                         <InputGroupAddon addonType="append">
-                            <InputGroupText>@</InputGroupText>
+                            <InputGroupText><i className="fa fa-search" aria-hidden="true"></i></InputGroupText>
                         </InputGroupAddon>
                     </InputGroup>
                 </div>  

@@ -7,7 +7,11 @@ const NotFoundPage = ()=>(
         <div className="box-layout-box">
             <h1 className="box-layout-title">404!</h1>
             <h4>Page Not Found.</h4><br/>
-            <Link to="/dashboard"><Button color="primary" size="lg">Back to Expensify</Button></Link>
+            <Link to="/dashboard">
+                <Button color="primary" size="lg">
+                    <i className="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;&nbsp;Back to Expensify
+                </Button>
+            </Link>
         </div>
     </div>
 );
